@@ -1,5 +1,6 @@
 package com.example.hangman_kotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,13 @@ class LevelSelectorActivity : AppCompatActivity() {
         for(level in levels){
             val levelView = LevelCardView(this)
             levelView.bind(level)
+
+            levelView.setOnClickListener {
+                val intent = Intent(this, GameplayActivity::class.java)
+                intent.putExtra("WORD: ", level.word)
+                startActivity(intent)
+            }
+
             levelsContainer.addView(levelView)
         }
     }
