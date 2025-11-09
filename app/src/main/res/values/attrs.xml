@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- attrs para tu LevelCardView -->
+    <declare-styleable name="LevelCardView">
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="reference" />
+    </declare-styleable>
+
+    <!-- attrs para tu KeyboardKey (puedes dejarlo vacío por ahora) -->
+    <declare-styleable name="KeyboardKey">
+        <!-- deja esto vacío o pon tus attrs reales -->
+    </declare-styleable>
+
+</resources>
