@@ -4,30 +4,35 @@ import com.example.hangman_kotlin.R
 
 object LevelsInfoRepository{
     val levels = listOf(
-        LevelsInfo(
+        levelsInfo(
             imageID = R.drawable.reaction_easy,
             word = "CAFE",
             dificulty = "Easy",
         ),
-        LevelsInfo(
+        levelsInfo(
             imageID = R.drawable.reaction_easy,
              word = "FOTO",
             dificulty = "Easy",
          ),
-        LevelsInfo(
+        levelsInfo(
             imageID = R.drawable.reaction_mid,
             word = "CABALLO",
             dificulty = "Mid",
         ),
-        LevelsInfo(
+        levelsInfo(
             imageID = R.drawable.reaction_mid,
             word = "LAMPARA",
             dificulty = "Mid",
         ),
-        LevelsInfo(
+        levelsInfo(
             imageID = R.drawable.reaction_hard,
             word = "FERROCARRIL",
             dificulty = "Hard",
+        ),
+        levelsInfo(
+            imageID = R.drawable.reaction_mid,
+            word = "MURCIELAGO",
+            dificulty = "Mid",
         )
     )
 }

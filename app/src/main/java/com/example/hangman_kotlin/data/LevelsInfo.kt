@@ -1,6 +1,6 @@
 package com.example.hangman_kotlin.data
 
-data class LevelsInfo(
+data class levelsInfo(
     val imageID: Int,
     val word: String,
     val dificulty: String
