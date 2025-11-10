@@ -87,11 +87,19 @@ class GameplayActivity : AppCompatActivity() {
 
         if (!found) {
             mistakes = mistakes!! + 1
+            updateHangmanImage()
 
-
-
+            if(mistakes!! >= hangmanStates.size-1){
+                // TODO: mostrar mensaje de "perdiste"
+                disableKeyboard()
+            }
+            else{
+                if(!currentState.contains('_')){
+                    // TODO: mostrar "ganaste"
+                    disableKeyboard()
+                }
+            }
         }
-
     }
 
     private fun updateHangmanImage(){
