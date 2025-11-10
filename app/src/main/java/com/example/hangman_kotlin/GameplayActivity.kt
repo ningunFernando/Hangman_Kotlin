@@ -48,7 +48,9 @@ class GameplayActivity : AppCompatActivity() {
         currentState = CharArray(targetWord.length) {'_'}
         RenderWord()
 
-        
+        hangmanImage.setImageResource(hangmanStates[0])
+
+        //creacion de las teclas del teclado
         val keys = KeyboardRepository.keys
         for(key in keys){
             val keyView = KeyboardKey(this)
@@ -83,15 +85,25 @@ class GameplayActivity : AppCompatActivity() {
         keyView.isEnabled = false
         keyView.alpha = 0.5f
 
-        // aquí podrías checar si ya ganó
-        if (!currentState.contains('_')) {
-            // TODO: mostrar "ganaste"
-        }
-
-        // si NO la encontró, aquí iría la lógica de fallos / dibujar ahorcado
         if (!found) {
-            // TODO: aumentar contador de errores
+            mistakes = mistakes!! + 1
+
+
+
         }
 
+    }
+
+    private fun updateHangmanImage(){
+        val index = mistakes?.coerceIn(0, hangmanStates.size - 1)?.toInt()
+        hangmanImage.setImageResource(hangmanStates[index!!])
+    }
+
+    private fun disableKeyboard(){
+        for(i in 0 until keyboardContainer.childCount){
+            val child = keyboardContainer.getChildAt(i)
+            child.isEnabled = false
+            child.alpha = 0.5f
+        }
     }
 }
