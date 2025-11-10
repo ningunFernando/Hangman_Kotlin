@@ -16,12 +16,16 @@ class LevelSelectorActivity : AppCompatActivity() {
 
         levelsContainer = findViewById(R.id.lsa_LevelsContainer)
 
+        //se obtiene la lista de niveles definida en LevelsInfoRepository
         val levels = LevelsInfoRepository.levels
 
+        //por cada elemento en  la lista de LevelsInfoRepository se crea un LevelCardView y se agrega a levelsContainer
         for(level in levels){
             val levelView = LevelCardView(this)
             levelView.bind(level)
 
+            //al hacer click en la carta se inicia la GameplayActivity
+            //y se le pasa la palabra correspondiente como parámetro
             levelView.setOnClickListener {
                 val intent = Intent(this, GameplayActivity::class.java)
                 intent.putExtra("WORD", level.word)

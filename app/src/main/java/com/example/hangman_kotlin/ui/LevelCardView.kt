@@ -9,19 +9,21 @@ import android.widget.TextView
 import com.example.hangman_kotlin.R
 import com.example.hangman_kotlin.data.levelsInfo
 
-
+//Custom view que representa una carta/nivel en el selector de niveles
+//se encarga de mostrar la info de un nivel: dificultad, palabra, largo e imagen
 class LevelCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
     ) : LinearLayout(context, attrs, defStyle) {
 
+        //referencias a los componentes del layout
         private val cv_dificulty:  TextView
         private val  cv_word: TextView
         private val cv_lenght: TextView
         private val cv_image: ImageView
 
-
+    //se agrega el xml a la custom view y buscamos id's de los componentes
     init{
         LayoutInflater.from(context).inflate(R.layout.sample_level_card_view, this, true)
 
@@ -31,6 +33,7 @@ class LevelCardView @JvmOverloads constructor(
         cv_image = findViewById(R.id.cv_image)
     }
 
+    //se recibe un objeto de tipo levelsinfo que contiene la informacion para poder generar diferentes cards para niveles
     fun bind(levelsInfo: levelsInfo){
         cv_dificulty.text = "Dificulty: ${levelsInfo.dificulty}"
         cv_word.text = levelsInfo.word
