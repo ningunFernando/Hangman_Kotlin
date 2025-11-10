@@ -24,7 +24,7 @@ class LevelSelectorActivity : AppCompatActivity() {
 
             levelView.setOnClickListener {
                 val intent = Intent(this, GameplayActivity::class.java)
-                intent.putExtra("WORD: ", level.word)
+                intent.putExtra("WORD", level.word)
                 startActivity(intent)
             }
 
